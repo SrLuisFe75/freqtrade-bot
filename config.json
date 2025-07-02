@@ -1,17 +1,26 @@
 {
-    "max_open_trades": 3,
-    "stake_currency": "USDT",
-    "stake_amount": 200,
-    "timeframe": "5m",
-    "dry_run": true,
-    "exchange": {"name": "kucoin"},
-    "pairlists": [{"method": "StaticPairList"}],
-    "pair_whitelist": ["BTC/USDT", "ETH/USDT"],
-    "api_server": {
-        "enabled": true,
-        "listen_ip_address": "0.0.0.0",
-        "listen_port": 8080,
-        "username": "freqtrader",
-        "password": "password123"
-    }
+  "max_open_trades": 3,
+  "stake_currency": "USDT", 
+  "stake_amount": 100,
+  "dry_run": true,
+  "timeframe": "5m",
+  
+  "pair_whitelist": [
+    "BTC/USDT",
+    "ETH/USDT", 
+    "BNB/USDT",
+    "ADA/USDT",
+    "SOL/USDT"
+  ],
+  
+  "exchange": {
+    "name": "kucoin",
+    "sandbox": true
+  },
+  
+  "webserver": {
+    "enabled": true,
+    "listen_ip_address": "0.0.0.0",
+    "listen_port": 8080
+  }
 }
