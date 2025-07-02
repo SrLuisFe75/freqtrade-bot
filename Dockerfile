@@ -1,13 +1,10 @@
 FROM freqtradeorg/freqtrade:latest
 
-# Copy config
+# Copiar solo el archivo que SÍ existe
 COPY config.json /freqtrade/config.json
 
-# Copy strategies if exists
-COPY strategies/ /freqtrade/user_data/strategies/ 2>/dev/null || :
-
-# Expose port
+# Exponer puerto
 EXPOSE 8080
 
-# Start bot
-CMD ["freqtrade", "trade", "--config", "/freqtrade/config.json", "--strategy", "SimpleStrategy"]
+# Iniciar bot en modo webserver (más estable para Render)
+CMD ["freqtrade", "webserver", "--config", "/freqtrade/config.json"]
