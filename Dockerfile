@@ -1,10 +1,9 @@
 FROM freqtradeorg/freqtrade:latest
 
-# Copiar solo el archivo que SÍ existe
-COPY config.json /freqtrade/config.json
+WORKDIR /freqtrade
 
-# Exponer puerto
+COPY config.json .
+
 EXPOSE 8080
 
-# Iniciar bot en modo webserver (más estable para Render)
-CMD ["freqtrade", "webserver", "--config", "/freqtrade/config.json"]
+CMD ["freqtrade", "webserver", "--config", "config.json"]
