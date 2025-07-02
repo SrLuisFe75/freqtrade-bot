@@ -1,9 +1,11 @@
+# Dockerfile CORRECTO basado en imagen oficial
 FROM freqtradeorg/freqtrade:latest
 
+# Copiar configuración
 COPY config.json /freqtrade/config.json
 
-WORKDIR /freqtrade
-
+# Exponer puerto
 EXPOSE 8080
 
-CMD ["freqtrade", "webserver", "--config", "config.json"]
+# SOLO el comando, sin "freqtrade" (ya está en ENTRYPOINT)
+CMD ["webserver", "--config", "/freqtrade/config.json"]
