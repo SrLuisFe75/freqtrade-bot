@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: freqtrade-bot
+    env: docker
+    port: 8080
+    healthCheckPath: /
