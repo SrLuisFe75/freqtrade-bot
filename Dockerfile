@@ -6,5 +6,4 @@ WORKDIR /freqtrade
 
 EXPOSE 8080
 
-ENTRYPOINT ["freqtrade"]
-CMD ["webserver", "--config", "config.json", "--listen-ip-address", "0.0.0.0", "--listen-port", "8080"]
+CMD ["freqtrade", "webserver", "--config", "config.json"]
